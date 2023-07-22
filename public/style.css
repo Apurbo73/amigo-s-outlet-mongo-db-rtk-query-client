@@ -1,0 +1,11 @@
+.navPart2{
+    display: flex;
+    background-color: #232F3E;
+    padding: 5px;
+}
+.navPart2Item{
+margin-right: 30px;
+color: azure;
+font-size: 14px;
+font-weight: 600;
+}
