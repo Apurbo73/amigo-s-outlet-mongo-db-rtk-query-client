@@ -9,7 +9,7 @@ const Header = () => {
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
           <Link to="/" className="navbar-brand" href="#">
-            Amigo's Outlet
+            Amigo's <span className="text-warning">Outlet</span>
           </Link>
           <button
             className="navbar-toggler"
@@ -24,7 +24,7 @@ const Header = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
+              <li className="nav-item ">
                 <Link
                   to="/"
                   className="nav-link active"
@@ -34,23 +34,28 @@ const Header = () => {
                   Home
                 </Link>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
+              <li className="nav-item ">
+                <a className="nav-link text-light" href="#">
                   About Us
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link text-light" href="#">
                   Cart
                 </a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
+              <li className="nav-item ">
+                <a className="nav-link text-light" href="#">
                   Sign Out
                 </a>
               </li>
+              <li className="nav-item ">
+                <a className="nav-link text-light" href="#">
+                  Guidelines
+                </a>
+              </li>
             </ul>
-            <form className="d-flex">
+            <form className="d-flex ">
               <input
                 className="form-control me-2"
                 type="search"
@@ -70,11 +75,16 @@ const Header = () => {
       <div className="navPart2">
         <i className="fa-solid fa-bars navPart2Item mt-1" />
         <div className="navPart2Item">Sell</div>
-        <div className="navPart2Item">Gift Cards Sell</div>
-        <div className="navPart2Item">Registry</div>
-        <div className="navPart2Item">Reviews</div>
-        <div className="navPart2Item">Top Deals</div>
+        <div className="navPart2Item">Gift Cards </div>
+        <div className="navPart2Item">Grocery</div>
+        <div className="navPart2Item">Electronics</div>
+        <div className="navPart2Item">Sports</div>
+        <div className="navPart2Item">Mobiles</div>
         <div className="navPart2Item">New Arrival</div>
+        <div className="navPart2Item">New Arrival</div>
+        <div className="navPart2Item">Furniture</div>
+        <div className="navPart2Item">Fashion</div>
+        <div className="navPart2Item">Top Deals</div>
       </div>
       {/* navbar part2 ends */}
       <Carousel></Carousel>

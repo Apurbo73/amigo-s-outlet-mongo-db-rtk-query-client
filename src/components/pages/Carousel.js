@@ -1,5 +1,7 @@
 import React from 'react';
 import img1 from "../../images/hero_image.jpg"
+import img2 from "../../images/hero2.jpg"
+
 const Carousel = () => {
     return (
         <div>
@@ -14,11 +16,9 @@ const Carousel = () => {
       <img src={img1} className="d-block w-100" alt="..." />
     </div>
     <div className="carousel-item">
-      <img src="..." className="d-block w-100" alt="..." />
+      <img src={img2} className="d-block w-100" alt="..." />
     </div>
-    <div className="carousel-item">
-      <img src="..." className="d-block w-100" alt="..." />
-    </div>
+  
   </div>
   <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
     <span className="carousel-control-prev-icon" aria-hidden="true" />

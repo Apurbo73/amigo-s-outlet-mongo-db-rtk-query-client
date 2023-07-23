@@ -1,11 +1,25 @@
-.navPart2{
+body {
+    background-color: #E3E6E6;
+}
+
+
+.navPart2 {
     display: flex;
+    flex-wrap: wrap;
     background-color: #232F3E;
     padding: 5px;
 }
-.navPart2Item{
-margin-right: 30px;
-color: azure;
-font-size: 14px;
-font-weight: 600;
+
+.navPart2Item {
+    margin-right: 30px;
+    color: azure;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 3px;
 }
+
+.navPart2Item:hover {
+    background-color: rgb(233, 231, 229);
+    color: #232F3E;
+}
+
