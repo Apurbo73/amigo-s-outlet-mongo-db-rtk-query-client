@@ -80,11 +80,12 @@ const Header = () => {
         <div className="navPart2Item">Electronics</div>
         <div className="navPart2Item">Sports</div>
         <div className="navPart2Item">Mobiles</div>
-        <div className="navPart2Item">New Arrival</div>
-        <div className="navPart2Item">New Arrival</div>
+        <div className="navPart2Item">Home</div>
         <div className="navPart2Item">Furniture</div>
         <div className="navPart2Item">Fashion</div>
         <div className="navPart2Item">Top Deals</div>
+        <div className="navPart2Item">New Arrival</div>
+
       </div>
       {/* navbar part2 ends */}
       <Carousel></Carousel>

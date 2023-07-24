@@ -21,5 +21,6 @@ body {
 .navPart2Item:hover {
     background-color: rgb(233, 231, 229);
     color: #232F3E;
+    border-radius: 5px;
 }
 
