@@ -4,15 +4,36 @@ export const apiSlice = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "http://localhost:8080"
   }),
+  tagTypes: ["all","singleProduct"],
   endpoints: builder => ({
     addProduct: builder.mutation({
       query: data => ({
         url: `/products`,
         method: "POST",
         body: data
-      })
+      }),
+      invalidatesTags: ["all"]
+    }),
+    getAllProducts: builder.query({
+      query: () => `/products`,
+      providesTags: ["all"]
+    }),
+    deleteProduct: builder.mutation({
+      query: id => ({
+        url: `/products/${id}`,
+        method:"DELETE"
+      }),
+      invalidatesTags: ["all","singleProduct"]
+    }),
+    getSingleProduct: builder.query({
+      query: id => `/products/${id}`
     })
   })
 });
 
-export const { useAddProductMutation } = apiSlice;
+export const {
+  useAddProductMutation,
+  useGetAllProductsQuery,
+  useDeleteProductMutation,
+  useGetSingleProductQuery
+} = apiSlice;

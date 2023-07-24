@@ -1,5 +1,6 @@
 import React from "react";
 import Carousel from "../src/components/pages/Carousel"
+import AllProducts from "./components/Products/AllProducts";
 function App() {
   return (
     <div className="App">
@@ -10,6 +11,7 @@ function App() {
         soluta adipisci officia eius ea ratione! Expedita pariatur sit sunt
         beatae natus?
       </p>
+      <AllProducts></AllProducts>
     </div>
   );
 }
