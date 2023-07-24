@@ -7,6 +7,9 @@ import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/pages/Header";
+import SignUp from './components/SignUp/SignUp';
+import LogIn from "./components/Login/LogIn";
+import Add from "./components/AddProduct/Add";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -17,6 +20,12 @@ root.render(
       <Header />
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/sign-up" element={<SignUp/>} />
+        <Route path="/login" element={<LogIn/>} />
+        <Route path="/add-product" element={<Add/>} />
+
+
+
       </Routes>
     </Provider>
   </BrowserRouter>

@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Carousel from "./Carousel";
 
 const Header = () => {
   return (
@@ -45,15 +44,20 @@ const Header = () => {
                 </a>
               </li>
               <li className="nav-item ">
-                <a className="nav-link text-light" href="#">
-                  Sign Out
-                </a>
+                <Link to="/sign-up" className="nav-link text-light" href="#">
+                  Sign Up
+                </Link>
               </li>
               <li className="nav-item ">
                 <a className="nav-link text-light" href="#">
                   Guidelines
                 </a>
               </li>
+              <Link style={{textDecoration:"none"}} to="/add-product" className="nav-item ">
+                <a className="nav-link text-light" href="#">
+                  Add Product
+                </a>
+              </Link>
             </ul>
             <form className="d-flex ">
               <input
@@ -85,10 +89,8 @@ const Header = () => {
         <div className="navPart2Item">Fashion</div>
         <div className="navPart2Item">Top Deals</div>
         <div className="navPart2Item">New Arrival</div>
-
       </div>
       {/* navbar part2 ends */}
-      <Carousel></Carousel>
     </div>
   );
 };
