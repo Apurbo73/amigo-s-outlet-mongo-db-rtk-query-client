@@ -37,7 +37,7 @@ const DetailProductPage = ({ detailProduct }) => {
           <Link to="/" className="btn btn-warning w-50">
             Edit
           </Link>
-          <Link to="/" className="btn btn-dark w-50" onClick={handleDelete}>
+          <Link  className="btn btn-dark w-50" onClick={handleDelete}>
             Delete
           </Link>
         </div>

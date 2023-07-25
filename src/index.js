@@ -11,6 +11,7 @@ import SignUp from "./components/SignUp/SignUp";
 import LogIn from "./components/Login/LogIn";
 import Add from "./components/AddProduct/Add";
 import DetailProduct from "./components/Detail/DetailProduct";
+import Edit from "./components/Edit/Edit";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -18,13 +19,14 @@ const root = createRoot(container);
 root.render(
   <BrowserRouter>
     <Provider store={store}>
-      <Header />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/add-product" element={<Add />} />
         <Route path="/detail/:id" element={<DetailProduct />} />
+        <Route path="/edit/:id" element={<Edit />} />
+
       </Routes>
     </Provider>
   </BrowserRouter>

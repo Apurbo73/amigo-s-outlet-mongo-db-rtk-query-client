@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Search from "../Search";
 
 const Header = () => {
+
   return (
     <div>
       {/* navbar starts */}
@@ -53,23 +55,17 @@ const Header = () => {
                   Guidelines
                 </a>
               </li>
-              <Link style={{textDecoration:"none"}} to="/add-product" className="nav-item ">
+              <Link
+                style={{ textDecoration: "none" }}
+                to="/add-product"
+                className="nav-item "
+              >
                 <a className="nav-link text-light" href="#">
                   Add Product
                 </a>
               </Link>
             </ul>
-            <form className="d-flex ">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-warning" type="submit">
-                Search
-              </button>
-            </form>
+
           </div>
         </div>
       </nav>
