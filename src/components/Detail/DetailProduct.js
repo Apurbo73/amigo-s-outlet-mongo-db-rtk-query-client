@@ -12,17 +12,7 @@ const DetailProduct = () => {
     error
   } = useGetSingleProductQuery(id);
   console.log(detailProduct)
-  //decide what to render:
-  //   let content = null;
-  //   if (isLoading) {
-  //     content = <div>Loading...</div>;
-  //   }
-  //   if (!isLoading && isError) {
-  //     content = <div>Something went wrong...</div>;
-  //   }
-  //   if (!isLoading && !isError && detailProduct.length !== 0) {
-  //     content = <DetailProductPage />;
-  //   }
+
   return (
     <div className="">
       {detailProduct && <DetailProductPage detailProduct={detailProduct} />}

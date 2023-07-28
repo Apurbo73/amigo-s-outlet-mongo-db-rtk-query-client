@@ -106,19 +106,19 @@ const DetailProductPage = ({ detailProduct }) => {
       </div>
       <div className="card mb-3 mx-auto mt-5" style={{ maxWidth: 540 }}>
         <div className="row g-0">
-          <div className="col-md-4">
+          <div className="col-md-6">
             <img
               src={imageLink}
-              className="img-fluid rounded-start"
+              className="img-fluid rounded-start p-3"
               alt="..."
             />
-          <div className="text-center">
-          <Link className="btn btn-dark m-1">+</Link>
-            <Link className="btn btn-warning m-1">0</Link>
-            <Link className="btn btn-dark ">-</Link>
+            <div className="text-center">
+              <Link className="btn btn-dark m-1">+</Link>
+              <Link className="btn btn-warning m-1">0</Link>
+              <Link className="btn btn-dark ">-</Link>
+            </div>
           </div>
-          </div>
-          <div className="col-md-8">
+          <div className="col-md-5">
             <div className="card-body text-center">
               <h5 className="card-title">
                 {name}
@@ -133,8 +133,12 @@ const DetailProductPage = ({ detailProduct }) => {
                 Category : {category}.
               </p>
 
-              <Link className="btn btn-dark m-1" onClick={handleDelete}>Delete</Link>
-              <Link className="btn btn-warning ">Update</Link>
+              <Link className="btn btn-dark m-1" onClick={handleDelete}>
+                Delete
+              </Link>
+              <Link to={`/edit/${_id}`} className="btn btn-warning ">
+                Update
+              </Link>
             </div>
           </div>
         </div>

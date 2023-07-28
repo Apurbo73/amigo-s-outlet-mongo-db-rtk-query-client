@@ -26,7 +26,8 @@ export const apiSlice = createApi({
       invalidatesTags: ["all", "singleProduct"]
     }),
     getSingleProduct: builder.query({
-      query: id => `/products/${id}`
+      query: id => `/products/${id}`,
+      providesTags:["singleProduct"]
     }),
     updateProduct: builder.mutation({
       query: ({ id, data }) => ({

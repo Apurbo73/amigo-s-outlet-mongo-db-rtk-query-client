@@ -8,9 +8,9 @@ const Product = ({ product }) => {
     <div className="col-12 col-lg-3 col-md-3 ">
       <div style={{ backgroundColor: "lavender" }} className="m-2 rounded">
         <img
-          style={{ height: 300 }}
+          style={{ height: 280 }}
           src={imageLink}
-          className="card-img-top p-4"
+          className="card-img-top p-5 "
           alt="..."
         />
         <div className="card-body text-center ">

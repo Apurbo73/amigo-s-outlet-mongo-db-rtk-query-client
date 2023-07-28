@@ -24,6 +24,23 @@ body {
     border-radius: 5px;
 }
 
-.allProducts-bg{
+.allProducts-bg {
     background-color: rgb(210, 218, 243);
+}
+
+.categorySelect {
+    background-color: #d2d5da;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.categorySelect :hover {
+    transform: scale(1.1);
+    transition: 0.5s ease-in-out;
+}
+
+.imageDesign :hover {
+    transform: scale(1.1);
+    transition: 0.5s ease-in-out;
+    background-color: black;
 }

@@ -14,13 +14,14 @@ const DisplayCateoryPictures = props => {
         data.map(d => {
           return (
             <div
+            className="categorySelect"
               style={{ margin: 10 }}
               onClick={() => {
                 setSelectedCategory(d.category);
               }}
             >
               <img src={d.image} alt="" />
-              <p className="text-center">
+              <p style={{fontWeight:600}} className="text-center">
                 {d.category}
               </p>
             </div>

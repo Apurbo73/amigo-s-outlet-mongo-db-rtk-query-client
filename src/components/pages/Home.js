@@ -19,15 +19,15 @@ const Home = ({ allProducts }) => {
     });
     setFilteredProducts(searchedProduct);
   };
-    //handle Filter Category:
-    const handleFilterCategory=(category)=>{
-      let filteredCategory = category.toLowerCase();
-      const filteredProduct = allProducts.filter(data => {
-        const newProduct = data.category.toLowerCase();
-        return newProduct.includes(filteredCategory);
-      });
-      show && setFilteredProducts(filteredProduct);
-    }
+  //handle Filter Category:
+  const handleFilterCategory = category => {
+    let filteredCategory = category.toLowerCase();
+    const filteredProduct = allProducts.filter(data => {
+      const newProduct = data.category.toLowerCase();
+      return newProduct.includes(filteredCategory);
+    });
+    show && setFilteredProducts(filteredProduct);
+  };
   return (
     <div>
       {/* navbar starts */}
@@ -115,11 +115,30 @@ const Home = ({ allProducts }) => {
 
       <Carousel />
 
-      <div className="" onClick={()=>{setShow(!show)}}>
+      <div
+        style={{ cursor: "pointer" }}
+        onClick={() => {
+          setShow(!show);
+        }}
+      >
         <DisplayCateoryPictures onFilter={handleFilterCategory} />
       </div>
-      <p className="p-1 btn-secondary text-center " onClick={()=>{setShow(!show)}}>{show ? "Unselect Category To See All" : "Select Category Above"}</p>
-
+      <p
+        style={{ backgroundColor: "#232F3E", cursor: "pointer" }}
+        className="p-1  text-center text-light "
+        onClick={() => {
+          setShow(!show);
+        }}
+      >
+        {show ? "Unselect Category To See All" : "Select Category Above"}
+      </p>
+      <div className="text-center">
+        <h5>
+          {filteredProducts.length === 0
+            ? "No Product Found"
+            : ` Available Products ${filteredProducts.length}`}
+        </h5>
+      </div>
       {allProducts && <AllProducts allProducts={filteredProducts} />}
     </div>
   );
