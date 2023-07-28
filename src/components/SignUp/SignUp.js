@@ -1,13 +1,14 @@
-import React from 'react';
-import SignUpForm from './SignUpForm';
+import React from "react";
+import SignUpForm from "./SignUpForm";
+import Header from "../pages/Header";
 
 const SignUp = () => {
-    return (
-        <div>
-        hi
-            <SignUpForm></SignUpForm>
-        </div>
-    );
+  return (
+    <div>
+      <Header />
+      <SignUpForm />
+    </div>
+  );
 };
 
 export default SignUp;

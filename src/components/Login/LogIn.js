@@ -1,12 +1,14 @@
-import React from 'react';
-import LoginForm from './LoginForm';
+import React from "react";
+import LoginForm from "./LoginForm";
+import Header from "../pages/Header";
 
 const LogIn = () => {
-    return (
-        <div>
-            <LoginForm></LoginForm>
-        </div>
-    );
+  return (
+    <div>
+      <Header />
+      <LoginForm />
+    </div>
+  );
 };
 
 export default LogIn;

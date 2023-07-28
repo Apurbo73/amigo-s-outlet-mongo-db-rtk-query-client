@@ -6,7 +6,7 @@ const Search = props => {
     () => {
       props.onSearch(searchText);
     },
-    [props, searchText]
+    [props]
   );
   return (
     <div>

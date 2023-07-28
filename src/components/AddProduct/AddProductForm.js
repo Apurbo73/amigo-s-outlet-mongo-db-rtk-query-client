@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAddProductMutation } from "../../features/apiSlice";
+import { useNavigate } from "react-router-dom";
 
 const AddProductForm = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [category, setCategory] = useState("");
   const [imageLink, setImageLink] = useState("");
   const [seller, setSeller] = useState("");
   const [price, setPrice] = useState("");
-  const [addProduct, { isLoading, isError, error }] = useAddProductMutation();
+  const [
+    addProduct,
+    { isLoading, isError, error, isSuccess }
+  ] = useAddProductMutation();
 
   //handle Submit:
   const handleSubmit = e => {
@@ -20,7 +25,12 @@ const AddProductForm = () => {
       price
     });
   };
-
+  useEffect(
+    () => {
+      isSuccess && navigate("/");
+    },
+    [isSuccess]
+  );
   return (
     <div>
       <div className="row mt-5">
@@ -36,6 +46,7 @@ const AddProductForm = () => {
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
               placeholder="Enter Product Name"
+              required
               onChange={e => {
                 setName(e.target.value);
               }}
@@ -48,6 +59,7 @@ const AddProductForm = () => {
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
               placeholder="Enter Product Category"
+              required
               onChange={e => {
                 setCategory(e.target.value);
               }}
@@ -60,6 +72,7 @@ const AddProductForm = () => {
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
               placeholder="Enter Product Price"
+              required
               onChange={e => {
                 setPrice(e.target.value);
               }}
@@ -72,6 +85,7 @@ const AddProductForm = () => {
               id="exampleInputEmail1"
               aria-describedby="emaileHelp"
               placeholder="Enter Image Link"
+              required
               onChange={e => {
                 setImageLink(e.target.value);
               }}
@@ -84,6 +98,7 @@ const AddProductForm = () => {
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
               placeholder="Enter Seller Name"
+              required
               onChange={e => {
                 setSeller(e.target.value);
               }}

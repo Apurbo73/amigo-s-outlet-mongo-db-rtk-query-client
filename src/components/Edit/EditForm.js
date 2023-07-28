@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { useUpdateProductMutation } from "../../features/apiSlice";
 
 const EditForm = ({ singleProduct }) => {
+  const navigate = useNavigate();
   const {
     _id,
     name: initialName,
@@ -19,13 +20,13 @@ const EditForm = ({ singleProduct }) => {
   const [seller, setSeller] = useState(initialSeller);
   const [
     updateProduct,
-    { isLoading, isError, error }
+    { isLoading, isError, error, isSuccess }
   ] = useUpdateProductMutation();
   //handle update Submit:
   const handleSubmit = e => {
     e.preventDefault();
     updateProduct({
-      id:_id,
+      id: _id,
       data: {
         name,
         category,
@@ -35,6 +36,12 @@ const EditForm = ({ singleProduct }) => {
       }
     });
   };
+  useEffect(
+    () => {
+      isSuccess && navigate("/");
+    },
+    [isSuccess]
+  );
   return (
     <div>
       <div className="row mt-5">

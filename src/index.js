@@ -12,6 +12,7 @@ import LogIn from "./components/Login/LogIn";
 import Add from "./components/AddProduct/Add";
 import DetailProduct from "./components/Detail/DetailProduct";
 import Edit from "./components/Edit/Edit";
+import Footer from "./components/pages/Footer";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -26,8 +27,8 @@ root.render(
         <Route path="/add-product" element={<Add />} />
         <Route path="/detail/:id" element={<DetailProduct />} />
         <Route path="/edit/:id" element={<Edit />} />
-
       </Routes>
+      <Footer />
     </Provider>
   </BrowserRouter>
 );

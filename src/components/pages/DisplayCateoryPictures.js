@@ -14,6 +14,7 @@ const DisplayCateoryPictures = props => {
         data.map(d => {
           return (
             <div
+            key={d.id}
             className="categorySelect"
               style={{ margin: 10 }}
               onClick={() => {
