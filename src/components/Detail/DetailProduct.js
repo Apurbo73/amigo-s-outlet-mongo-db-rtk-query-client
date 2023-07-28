@@ -24,7 +24,7 @@ const DetailProduct = () => {
   //     content = <DetailProductPage />;
   //   }
   return (
-    <div>
+    <div className="">
       {detailProduct && <DetailProductPage detailProduct={detailProduct} />}
     </div>
   );
