@@ -45,7 +45,7 @@ const EditForm = ({ singleProduct }) => {
   return (
     <div>
       <div className=" mt-5">
-        <h4 className="text-center">Add New Product</h4>
+        <h4 className="text-center">Update Product Details</h4>
         <form
           className="col-12 col-md-4 col-lg-4 mx-auto shadow-lg p-3 mb-5 bg-body rounded"
           onSubmit={handleSubmit}
