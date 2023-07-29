@@ -1,10 +1,43 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useDeleteProductMutation } from "../../features/apiSlice";
-
+import { useAddToCartMutation, useDeleteProductMutation } from "../../features/apiSlice";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Header from "../pages/Header";
 const DetailProductPage = ({ detailProduct }) => {
   const { _id, name, imageLink, seller, price, category } = detailProduct;
-  const [deleteProduct, { isLoading, isSuccess }] = useDeleteProductMutation();
+  const [deleteProduct, { isLoading,isSuccess }] = useDeleteProductMutation();
+  // handle quantity  of products:
+  let [count, setCount] = useState(1);
+  //handle Increment Count:
+  const handleIncrement = () => {
+    setCount(count + 1);
+    // console.log(count);
+  };
+  //handle Decrement Count:
+  const handleDecrement = () => {
+    setCount(count - 1);
+    if (count === 0) {
+      toast("Quantity can't be less than 1");
+      setCount(0);
+    }
+  };
+  //handle Add To Cart:
+  const handleAddToCart=(e)=>{
+    e.preventDefault();
+    addToCart({
+      name,
+      category,
+      imageLink,
+      quantity: count,
+      price: price* count,
+      seller,
+      
+    });
+    toast(` ${name} is added to cart`);
+
+  }
+  // console.log(count)
   const navigate = useNavigate();
   //handle Delete:
   const handleDelete = e => {
@@ -17,11 +50,13 @@ const DetailProductPage = ({ detailProduct }) => {
     },
     [isSuccess]
   );
+  const [addToCart ]=useAddToCartMutation();
   return (
-    <div>
+    <div className="mb-5">
+      <ToastContainer />
       <div>
         {/* navbar starts */}
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        {/* <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <div className="container-fluid">
             <Link to="/" className="navbar-brand" href="#">
               Amigo's <span className="text-warning">Outlet</span>
@@ -58,9 +93,9 @@ const DetailProductPage = ({ detailProduct }) => {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link text-light" href="#">
-                    Cart
-                  </a>
+                  <Link to='/cart' className="nav-link text-light" href="#">
+                    Cart 
+                  </Link>
                 </li>
                 <li className="nav-item ">
                   <Link to="/sign-up" className="nav-link text-light" href="#">
@@ -84,11 +119,12 @@ const DetailProductPage = ({ detailProduct }) => {
               </ul>
             </div>
           </div>
-        </nav>
+        </nav> */}
+        <Header></Header>
         {/* navbar ends */}
         {/* navbar part2 starts */}
 
-        <div className="navPart2">
+        {/* <div className="navPart2">
           <i className="fa-solid fa-bars navPart2Item mt-1" />
           <div className="navPart2Item">Sell</div>
           <div className="navPart2Item">Gift Cards </div>
@@ -101,24 +137,31 @@ const DetailProductPage = ({ detailProduct }) => {
           <div className="navPart2Item">Fashion</div>
           <div className="navPart2Item">Top Deals</div>
           <div className="navPart2Item">New Arrival</div>
-        </div>
+        </div> */}
         {/* navbar part2 ends */}
       </div>
-      <div className="card mb-3 mx-auto mt-5" style={{ maxWidth: 540 }}>
-        <div className="row g-0">
-          <div className="col-md-6">
-            <img
-              src={imageLink}
-              className="img-fluid rounded-start p-3"
-              alt="..."
-            />
+
+      <div className="row m-5">
+        <div className="d-flex flex-wrap">
+          <div className="col-md-5 col-lg-5 col-12">
+            <img src={imageLink} alt="" className="w-100"/>
             <div className="text-center">
-              <Link className="btn btn-dark m-1">+</Link>
-              <Link className="btn btn-warning m-1">0</Link>
-              <Link className="btn btn-dark ">-</Link>
+              <Link className="btn btn-dark m-1" onClick={handleIncrement}>
+               +
+              </Link>
+              <Link className="btn btn-warning m-1">
+                Quantity : {count}
+              </Link>
+              <Link className="btn btn-dark " onClick={handleDecrement}>
+                -
+              </Link> 
+              <Link className="btn btn-outline-warning m-1" onClick={handleAddToCart} >
+                Add To Cart
+              </Link>
             </div>
           </div>
-          <div className="col-md-5">
+
+          <div className="col-md-7 col-lg-7 col-12">
             <div className="card-body text-center">
               <h5 className="card-title">
                 {name}
@@ -133,10 +176,10 @@ const DetailProductPage = ({ detailProduct }) => {
                 Category : {category}.
               </p>
 
-              <Link className="btn btn-dark m-1" onClick={handleDelete}>
+              <Link className="btn btn-dark m-1 w-25" onClick={handleDelete}>
                 Delete
               </Link>
-              <Link to={`/edit/${_id}`} className="btn btn-warning ">
+              <Link to={`/edit/${_id}`} className="btn btn-warning w-25">
                 Update
               </Link>
             </div>

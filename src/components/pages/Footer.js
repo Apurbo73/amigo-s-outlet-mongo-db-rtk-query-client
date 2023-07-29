@@ -8,7 +8,7 @@ import { BiMobileVibration } from "react-icons/bi";
 
 const Footer = () => {
   return (
-    <div className="mt-5 pt-5">
+    <div className="mt-5">
       <div
         style={{ backgroundColor: " #232F3E", marginBottom: -16 }}
         className=" text-light "
@@ -17,11 +17,12 @@ const Footer = () => {
           &copy; 2023 Amigo's Outlet Limited Sylhet
         </p>
       </div>
+      
       <div
         style={{ backgroundColor: " #131A22" }}
-        className=" text-light p-5 row "
+        className=" text-light p-5  "
       >
-        <div className="d-flex flex-wrap container pb-3">
+        <div className="d-flex flex-wrap  pb-3">
           <div className="col-12 col-lg-2 col-md-2">
             <h6 className="mb-4">Learn About Us</h6>
             <p>Careerss</p>

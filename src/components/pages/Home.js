@@ -4,6 +4,7 @@ import Carousel from "./Carousel";
 import Search from "../Search";
 import { Link } from "react-router-dom";
 import DisplayCateoryPictures from "./DisplayCateoryPictures";
+import { useGetCartListQuery } from "../../features/apiSlice";
 const Home = ({ allProducts }) => {
   const [products, setProducts] = useState(allProducts);
   const [filteredProducts, setFilteredProducts] = useState(allProducts);
@@ -28,6 +29,12 @@ const Home = ({ allProducts }) => {
     });
     show && setFilteredProducts(filteredProduct);
   };
+  const {
+    data: cartProducts,
+    isLoading,
+    isError,
+    error
+  } = useGetCartListQuery();
   return (
     <div>
       {/* navbar starts */}
@@ -65,9 +72,10 @@ const Home = ({ allProducts }) => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-light" href="#">
-                  Cart
-                </a>
+                <Link to="/cart" className="nav-link text-light" href="#">
+                Cart <span className="text-warning">{cartProducts ? cartProducts.length :0}</span>
+
+                </Link>
               </li>
               <li className="nav-item ">
                 <Link to="/sign-up" className="nav-link text-light" href="#">
