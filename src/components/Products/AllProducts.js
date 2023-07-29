@@ -5,7 +5,7 @@ import Product from "./Product";
 
 const AllProducts = ({ allProducts }) => {
   return (
-    <div className="row">
+    <div >
      <div className="d-flex flex-wrap">
      {allProducts &&
         allProducts.map(product =>

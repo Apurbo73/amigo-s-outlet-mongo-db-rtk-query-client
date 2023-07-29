@@ -42,7 +42,7 @@ const Balance = () => {
         className=" border text-center bg-warning m-4"
       >
         <div className="m-3">
-          <h4>Your Cart</h4>
+          <h4>{cartProducts && cartProducts.length !==0 ? "Your Cart" :"Your Cart Is Empty"} </h4>
           <hr />
           <h6> Total Category :  {cartProducts && cartProducts.length}</h6>
           <h6>Total Product: {quantityOfproducts(cartProducts)}</h6>
