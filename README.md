@@ -1,5 +1,5 @@
 
-##### Amigo's Outlet Client Side:
+##### Amigo's Outlet Client Side:-
 ###### MERN Stack Redux Toolkit Project: Amigo's- Outlet:
 ###### An E-Commerce Website.
 ###### Redux is fun ✌️✌️
