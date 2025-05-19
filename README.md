@@ -22,4 +22,4 @@
 ###### 05. Balance Update On Cart Page (Individual Product And Overall )
 ###### 06. RTK Query Cache Management
 
-###### Amigo's Outlet Server Side: https://github.com/Apurbo73/amigo-s-outlet-mongo-db-rtk-query-server
+###### Amigo's Outlet Server Side: https://github.com/Apurbo73/amigo-s-outlet-mongo-db-rtk-query-server.
